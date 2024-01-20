@@ -31,7 +31,7 @@ export default function Projects({ projects }) {
 }
 
 //빌드타임에 호출
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   const options = {
     method: "POST",
     headers: {
