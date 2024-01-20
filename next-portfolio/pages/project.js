@@ -54,19 +54,24 @@ export async function getStaticProps() {
   let projects;
   let projectNames;
 
-  const res = await fetch(
-    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
-    options
-  )
-    .then((r) => r.json())
-    .then((r) => {
-      projectNames = r.results.map((aProject) => {
-        aProject.properties.이름.title[0].plain_text;
+  try {
+    const res = await fetch(
+      `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+      options
+    )
+      .then((r) => r.json())
+      .then((r) => {
+        projectNames = r.results.map((aProject) => {
+          aProject.properties.이름.title[0].plain_text;
+        });
+        projects = r;
       });
-      projects = r;
-    });
-  console.log(`projectNames : ${projectNames}`);
-  return {
-    props: { projects },
-  };
+    console.log(`projectNames : ${projectNames}`);
+    return {
+      props: { projects },
+    };
+  } catch (error) {
+    console.error(error);
+    return;
+  }
 }
