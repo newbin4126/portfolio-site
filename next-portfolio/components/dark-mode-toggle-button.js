@@ -1,6 +1,8 @@
 import { useTheme } from "next-themes";
 
 export default function DarkModuleToggleBotton() {
+  //theme : 현재 값 가져오기 getter
+  //setTheme :  현재 값 바꾸기 setter
   const { theme, setTheme } = useTheme();
   return (
     <>
@@ -21,7 +23,7 @@ export default function DarkModuleToggleBotton() {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="visible dark:visible dark:h-0 dark:w-0 h-5 w-5"
+          className="visible dark:invisible dark:h-0 dark:w-0 h-5 w-5"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -34,7 +36,7 @@ export default function DarkModuleToggleBotton() {
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="visible dark:visible dark:h-5 dark:w-5 h-0 w-0"
+          className="invisible dark:visible dark:h-5 dark:w-5 h-0 w-0"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

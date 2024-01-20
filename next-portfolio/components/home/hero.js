@@ -21,9 +21,7 @@ export default function Hero() {
         </p>
         <div className="flex justify-center">
           <Link href="/project" passHref>
-            <div className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">
-              프로젝트 보러가기
-            </div>
+            <div className="btn-project">프로젝트 보러가기</div>
           </Link>
         </div>
       </div>
